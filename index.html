@@ -10,12 +10,30 @@
     <style>
         #map {
             width: 100%;
-            height: 100vh;
+            height: 80vh;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        p {
+            margin: 20px;
         }
     </style>
 </head>
 <body>
+    <h2>Patriot 2.0 — Massachusetts ICE Activity Map</h2>
     <div id="map"></div>
+
+    <!-- Download link for your docx -->
+    <p>
+        📄 <a href="Patriot2_0_Updates_Resource_Guide.docx" download>
+            Download the Patriot 2.0 Updates Resource Guide
+        </a>
+    </p>
+
     <script>
         // Create the map centered on Massachusetts
         var map = L.map('map').setView([42.3601, -71.0589], 9);
@@ -40,8 +58,7 @@
 
         for (var name in locations) {
             var coords = locations[name];
-            L.marker(coords).addTo(map)
-                .bindPopup("<b>" + name + "</b>");
+            L.marker(coords).addTo(map).bindPopup("<b>" + name + "</b>");
         }
     </script>
 </body>
